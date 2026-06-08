@@ -15,34 +15,28 @@ const kindLabel: Record<string, string> = {
   story: '📖 Story',
 };
 
-const kindColor: Record<string, string> = {
-  money: 'var(--orange-bg)',
-  subreddit: 'var(--orange-light)',
-  usecase: 'var(--bg-cream)',
-  compare: 'var(--border-soft)',
-  story: 'var(--bg-warm)',
-};
-
 export default function ExamplesPage() {
   return (
-    <div className="page-wrapper">
+    <div className="container" style={{ padding: '64px 24px' }}>
       <div className="section-header">
-        <h2>Campaign examples</h2>
-        <p>Browse real Reddit campaign strategies by category.</p>
+        <span className="section-label">Examples</span>
+        <h2>Campaign playbooks</h2>
+        <p className="section-paragraph">Browse real Reddit campaign strategies by category.</p>
       </div>
 
-      <div className="grid-3">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }} className="grid-3">
         {seoPages.map((page) => (
-          <Link href={page.route} key={page.route} style={{ display: 'flex' }}>
+          <Link href={page.route} key={page.route} style={{ display: 'flex', textDecoration: 'none' }}>
             <div
               className="feature-card"
-              style={{ padding: '32px', width: '100%', cursor: 'pointer', display: 'flex', flexDirection: 'column' }}
+              style={{ padding: '32px', width: '100%', cursor: 'pointer', display: 'flex', flexDirection: 'column', height: '100%', minHeight: '220px' }}
             >
               <span
-                className="risk-badge"
+                className="badge-low"
                 style={{
-                  background: kindColor[page.kind] || 'var(--bg-warm)',
-                  color: 'var(--text-charcoal)',
+                  background: 'var(--bg-subtle)',
+                  color: 'var(--fg)',
+                  border: '1px solid var(--border)',
                   marginBottom: '16px',
                   display: 'inline-block',
                   width: 'fit-content'
@@ -51,7 +45,7 @@ export default function ExamplesPage() {
                 {kindLabel[page.kind] || page.kind}
               </span>
               <h3 style={{ textTransform: 'capitalize', fontSize: '1.25rem', marginBottom: '8px' }}>{page.title}</h3>
-              <p className="text-slate" style={{ fontSize: '0.95rem' }}>
+              <p style={{ fontSize: '0.92rem', color: 'var(--fg-muted)', flexGrow: 1 }}>
                 {page.metaDescription.slice(0, 100)}…
               </p>
             </div>

@@ -70,7 +70,7 @@ export default function GeneratePage() {
   if (isGenerating) return <LoadingScreen productName={input.productName || 'your product'} />;
 
   return (
-    <div className="page-wrapper" style={{ padding: '64px 24px' }}>
+    <div className="container" style={{ padding: '64px 24px' }}>
       <FadeIn className="section-header" style={{ marginBottom: '48px' }}>
         <h2>Build your campaign</h2>
         <p>Tell us what you're building, and we'll generate your custom Reddit strategy.</p>
@@ -81,13 +81,13 @@ export default function GeneratePage() {
           
           <div style={{ display: 'flex', gap: '8px', marginBottom: '32px' }}>
             {[1, 2, 3].map(s => (
-              <div key={s} style={{ flex: 1, height: '4px', borderRadius: '2px', background: s <= step ? 'var(--orange-primary)' : 'var(--border-soft)' }} />
+              <div key={s} style={{ flex: 1, height: '4px', borderRadius: '2px', background: s <= step ? 'var(--accent)' : 'var(--border)' }} />
             ))}
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
             <span className="text-muted" style={{ fontWeight: 500 }}>Step {step} of 3</span>
-            {step > 1 && <button onClick={prevStep} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--orange-primary)', fontWeight: 600 }}>← Back</button>}
+            {step > 1 && <button onClick={prevStep} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--accent)', fontWeight: 500 }}>← Back</button>}
           </div>
 
           {error && (

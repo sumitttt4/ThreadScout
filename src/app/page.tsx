@@ -1,273 +1,446 @@
 import Link from 'next/link';
 import {
-  ShieldAlert, FileText, CheckCircle,
-  Map, MessageCircle, ArrowRight, ShieldCheck, Star, AlertTriangle, Calendar, Clock, Zap
+  ArrowRight, ShieldCheck, CheckCircle, AlertTriangle, ArrowUp,
+  Globe, ShieldAlert, Cpu, Sparkles, MessageSquare, Target
 } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn';
 import { FaqItem } from '@/components/FaqItem';
 
 export default function Home() {
   return (
-    <div className="page-wrapper">
+    <div style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh' }}>
       
-      {/* ── HERO ── */}
-      <section className="hero-section" style={{ paddingBottom: 0 }}>
-        <div className="hero-container hero-split" style={{ gridTemplateColumns: '1.2fr 1fr', gap: '64px', alignItems: 'center' }}>
-          <FadeIn className="hero-content">
-            <div className="hero-badge">For SaaS founders marketing on Reddit</div>
-            <h1 style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4rem)', lineHeight: 1.08, fontWeight: 800 }}>
-              Marketing on Reddit<br/>without getting <span className="highlight">suspended.</span>
-            </h1>
-            <p className="hero-subtitle" style={{ fontSize: '1.15rem', marginTop: '20px', maxWidth: '480px', lineHeight: 1.6 }}>
-              We do the research: which subreddits accept promo, what to post, and how to reply. You execute manually.
-            </p>
-            <div className="hero-actions" style={{ marginTop: '28px', gap: '12px' }}>
-              <Link href="/generate" className="btn btn-primary btn-lg">Build my campaign <ArrowRight size={18} /></Link>
-              <Link href="#examples" className="btn btn-secondary btn-lg">See example output</Link>
-            </div>
-            <div style={{ display: 'flex', gap: '20px', marginTop: '32px', fontSize: '0.85rem', color: 'var(--slate)', fontWeight: 600 }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><ShieldCheck size={14} className="text-orange" /> No auto-posting</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><ShieldCheck size={14} className="text-orange" /> No mass DMs</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><ShieldCheck size={14} className="text-orange" /> Manual-first</span>
-            </div>
-          </FadeIn>
+      {/* ── VERTICAL GRIDLINES (Visual Rhythm from Screenshot) ── */}
+      <div className="grid-lines-container no-print">
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+      </div>
 
-          <FadeIn className="hero-visual" delay={0.2}>
-            <div className="hero-artifact">
-              <div className="hero-artifact-header">
-                <div style={{ display: 'flex', gap: '6px' }}>
-                  <span className="dot-red" style={{ width: 10, height: 10, borderRadius: '50%', display: 'inline-block' }} />
-                  <span className="dot-amber" style={{ width: 10, height: 10, borderRadius: '50%', display: 'inline-block' }} />
-                  <span style={{ width: 10, height: 10, borderRadius: '50%', display: 'inline-block', background: 'var(--green)' }} />
-                </div>
-                <span style={{ fontSize: '.8rem', fontWeight: 700, color: 'rgba(255,255,255,.6)' }}>Campaign Brief</span>
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        
+        {/* ── HERO SECTION (Centered Qvery Style) ── */}
+        <section style={{ padding: '120px 0 100px', textAlign: 'center' }}>
+          <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <FadeIn style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', maxWidth: '800px' }}>
+              <span className="tag-badge">[ 00 // REDDIT PROMOTION STRATEGY ]</span>
+              <h1 style={{ fontSize: 'clamp(2.8rem, 6vw, 4.8rem)', textAlign: 'center', margin: '16px 0 24px', lineHeight: '1.05' }}>
+                Stop guessing Reddit.<br />
+                Launch with a <span style={{ color: 'var(--accent)' }}>campaign brief.</span>
+              </h1>
+              <p style={{ fontSize: '1.25rem', color: 'var(--fg-muted)', lineHeight: '1.5', maxWidth: '580px', margin: '0 0 32px' }}>
+                90% of self-promotion on Reddit gets banned instantly. We build value-first campaign briefs so you can drive organic traffic without getting flagged.
+              </p>
+              
+              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }} className="hero-actions">
+                <Link href="/generate" className="btn btn-primary btn-lg" style={{ background: 'var(--accent)', borderColor: 'var(--accent)' }}>
+                  Build Campaign Brief <ArrowRight size={16} />
+                </Link>
+                <Link href="#brief-preview" className="btn btn-secondary btn-lg">
+                  See Example Brief
+                </Link>
               </div>
-              <div style={{ padding: '28px' }}>
-                <div style={{ fontSize: '.75rem', textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', fontWeight: 700, marginBottom: '8px' }}>Best First Post</div>
-                <div style={{ fontSize: '1.15rem', fontWeight: 700, fontStyle: 'italic', color: 'var(--ink)', lineHeight: 1.4, marginBottom: '24px' }}>&ldquo;Drop your startup. I&rsquo;ll give you a quick brand direction.&rdquo;</div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '20px' }}>
-                  <div className="hero-stat-chip"><span className="hero-stat-num">6</span><span className="hero-stat-label">Subreddits</span></div>
-                  <div className="hero-stat-chip"><span className="hero-stat-num">20</span><span className="hero-stat-label">Reply Templates</span></div>
+
+              <div style={{ display: 'flex', gap: '24px', marginTop: '24px', fontSize: '0.82rem', fontFamily: 'ui-monospace, monospace', color: 'var(--fg-subtle)', fontWeight: 500 }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><ShieldCheck size={14} style={{ color: 'var(--accent)' }} /> NO AUTOMATED SPAM</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><ShieldCheck size={14} style={{ color: 'var(--accent)' }} /> 100% MANUAL-FIRST</span>
+              </div>
+            </FadeIn>
+
+            {/* Central High-Fidelity Mockup */}
+            <FadeIn delay={0.2} style={{ width: '100%', maxWidth: '960px', marginTop: '80px' }}>
+              <div className="hero-dashboard-preview" style={{ textAlign: 'left' }}>
+                <div className="dashboard-header">
+                  <div className="dashboard-dots">
+                    <span className="dashboard-dot" style={{ background: 'var(--accent)', borderColor: 'var(--accent)' }} />
+                    <span className="dashboard-dot" />
+                    <span className="dashboard-dot" />
+                  </div>
+                  <span className="dashboard-title" style={{ fontFamily: 'ui-monospace, monospace' }}>scout_brief_active.json</span>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {['r/SideProject', 'r/SaaS', 'r/micro_saas'].map((s, i) => (
-                    <div key={s} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 14px', borderRadius: '10px', background: 'var(--bg-surface)', border: '1px solid var(--line)' }}>
-                      <span style={{ fontWeight: 700, color: 'var(--orange-primary)', fontSize: '.9rem' }}>{s}</span>
-                      <span className={`sub-badge ${i < 2 ? 'sub-badge-med' : 'sub-badge-low'}`} style={{ fontSize: '.7rem' }}>{i < 2 ? 'Medium' : 'Low'}</span>
+                <div className="dashboard-body">
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                    <span className="dashboard-label" style={{ fontFamily: 'ui-monospace, monospace' }}>Recommended First Move</span>
+                    <p style={{ fontSize: '1.2rem', fontWeight: 700, fontStyle: 'italic', margin: 0, borderLeft: '3px solid var(--accent)', paddingLeft: '12px' }}>
+                      &ldquo;Roast my brand guidelines. Be brutal.&rdquo;
+                    </p>
+                  </div>
+                  
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }} className="dashboard-grid">
+                    <div className="dashboard-card">
+                      <span className="dashboard-label" style={{ fontFamily: 'ui-monospace, monospace' }}>Subreddits</span>
+                      <div className="dashboard-stat" style={{ color: 'var(--accent)', marginTop: '4px' }}>6 Target</div>
                     </div>
-                  ))}
+                    <div className="dashboard-card">
+                      <span className="dashboard-label" style={{ fontFamily: 'ui-monospace, monospace' }}>Post Drafts</span>
+                      <div className="dashboard-stat" style={{ marginTop: '4px' }}>3 Angles</div>
+                    </div>
+                    <div className="dashboard-card">
+                      <span className="dashboard-label" style={{ fontFamily: 'ui-monospace, monospace' }}>Templates</span>
+                      <div className="dashboard-stat" style={{ marginTop: '4px' }}>20 Replies</div>
+                    </div>
+                  </div>
+
+                  <div className="dashboard-subreddits" style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '16px' }}>
+                    <span className="dashboard-label" style={{ fontFamily: 'ui-monospace, monospace', marginBottom: '8px', display: 'block' }}>Best Channels</span>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <div className="dashboard-sub-row">
+                        <span className="dashboard-sub-name" style={{ fontWeight: 600 }}>r/SideProject</span>
+                        <span className="badge-low" style={{ fontSize: '0.68rem', padding: '2px 6px', borderRadius: '4px' }}>Low Risk</span>
+                      </div>
+                      <div className="dashboard-sub-row">
+                        <span className="dashboard-sub-name" style={{ fontWeight: 600 }}>r/SaaS</span>
+                        <span className="badge-low" style={{ fontSize: '0.68rem', padding: '2px 6px', borderRadius: '4px', color: '#b45309', borderColor: '#fef3c7', background: '#fffbeb' }}>Med Risk</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* ── TARGET CHANNELS STRIP (Niche Bar mimicking Partner logos) ── */}
+        <section style={{ borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)', padding: '24px 0' }}>
+          <div className="container">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', textAlign: 'center', fontWeight: 700, fontSize: '0.9rem', color: 'var(--fg-muted)' }} className="grid-4">
+              <div>🎯 DEVELOPER TOOLS</div>
+              <div>⚡ AI & MACHINE LEARNING</div>
+              <div>💻 SAAS PLATFORMS</div>
+              <div>🎨 INDIE DESIGN CREATORS</div>
             </div>
-          </FadeIn>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <div className="section-divider" style={{ margin: '80px 0' }} />
+        {/* ── ALTERNATING FEATURES (One campaign. Four workflows.) ── */}
+        <section className="section-wrapper">
+          <div className="container">
+            <div className="section-header" style={{ alignItems: 'center', textAlign: 'center', margin: '0 auto 100px' }}>
+              <span className="tag-badge">[ 01 // THE WORKFLOWS ]</span>
+              <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', textAlign: 'center' }}>One campaign. Four instruments.</h2>
+              <p className="section-paragraph" style={{ textAlign: 'center' }}>
+                We guide you from discovery to execution. No bots, no automatic API posts — just targeted planning built for manual operations.
+              </p>
+            </div>
 
-      {/* ── PROBLEM ── */}
-      <FadeIn>
-        <div className="section-header"><h2>Most founders do Reddit wrong.</h2><p>They pitch too hard, pick the wrong subreddits, and get burned. Here&rsquo;s what we see over and over.</p></div>
-        <StaggerContainer style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gap: '16px' }}>
-          {[
-            { num: '01', title: 'Leading with the product link', desc: 'Founders post their link before earning any trust. Reddit auto-removes it or the community downvotes it within minutes.' },
-            { num: '02', title: 'Ignoring subreddit culture', desc: 'Every subreddit has its own unwritten rules. What works in r/SaaS will get you banned in r/Entrepreneur.' },
-            { num: '03', title: 'Writing like a marketer, not a person', desc: 'Reddit users can smell a pitch from three paragraphs away. Helpful founders get upvotes. Marketers get reported.' },
-          ].map(p => (
-            <StaggerItem key={p.num} className="problem-card-new">
-              <div className="problem-num-new">{p.num}</div>
-              <div>
-                <h4 style={{ fontSize: '1.1rem', marginBottom: '6px' }}>{p.title}</h4>
-                <p style={{ fontSize: '.95rem', color: 'var(--text-slate)' }}>{p.desc}</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '140px' }}>
+              
+              {/* Row 1: Subreddit Discovery */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="feature-row">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }} className="feature-text-block">
+                  <span className="tag-badge">[ 01 // DISCOVERY ]</span>
+                  <h3 style={{ fontSize: '1.8rem', fontWeight: 700, margin: 0 }}>Find communities already discussing your category.</h3>
+                  <p style={{ color: 'var(--fg-muted)', margin: 0 }}>
+                    We scan Reddit to locate the exact channels matching your niche. We verify active user thresholds and traffic cycles so you focus effort where it counts.
+                  </p>
+                  <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--fg-muted)', fontSize: '0.95rem' }}>
+                    <li>6 target subreddits mapped in your category.</li>
+                    <li>Daily visitor activity and policy checks.</li>
+                  </ul>
+                </div>
+                
+                <div className="q-card" style={{ background: '#ffffff' }}>
+                  <span className="dashboard-label" style={{ fontFamily: 'ui-monospace, monospace', marginBottom: '12px', display: 'block' }}>Target Subreddits Map</span>
+                  <table className="tracker-table" style={{ width: '100%' }}>
+                    <thead>
+                      <tr><th>Subreddit</th><th>Fit</th><th>Best Style</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style={{ fontWeight: 700, color: 'var(--accent)' }}>r/SideProject</td>
+                        <td><span className="badge-low" style={{ fontSize: '0.68rem', padding: '2px 6px' }}>Low Risk</span></td>
+                        <td>Update log</td>
+                      </tr>
+                      <tr>
+                        <td style={{ fontWeight: 700, color: 'var(--accent)' }}>r/SaaS</td>
+                        <td><span className="badge-low" style={{ fontSize: '0.68rem', padding: '2px 6px', color: '#b45309', borderColor: '#fef3c7', background: '#fffbeb' }}>Med Risk</span></td>
+                        <td>Founder story</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
-        <div style={{ textAlign: 'center', marginTop: '40px' }}>
-          <div className="highlight-line">ThreadScout helps you show up as a helpful founder, not a marketer in disguise.</div>
-        </div>
-      </FadeIn>
 
-      <div className="section-divider" style={{ margin: '96px 0' }} />
+              {/* Row 2: Post Drafts */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="feature-row reverse">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }} className="feature-text-block">
+                  <span className="tag-badge">[ 02 // DRAFTS ]</span>
+                  <h3 style={{ fontSize: '1.8rem', fontWeight: 700, margin: 0 }}>Generate posts that sound like a founder, not a marketer.</h3>
+                  <p style={{ color: 'var(--fg-muted)', margin: 0 }}>
+                    Reddit users spot advertising templates immediately. We build post drafts styled as organic, value-first log entries, story breakdowns, or roast requests.
+                  </p>
+                  <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--fg-muted)', fontSize: '0.95rem' }}>
+                    <li>3 customizable post angles included in every pack.</li>
+                    <li>Strict copy guidelines written in conversational tone.</li>
+                  </ul>
+                </div>
 
-      {/* ── HOW IT WORKS ── */}
-      <FadeIn>
-        <div className="section-header">
-          <span className="section-label">HOW IT WORKS</span>
-          <h2>Your campaign in 60 seconds.</h2>
-        </div>
-        <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
-          {[
-            { step: '01', title: 'Tell us what you built', desc: 'Product name, who it\'s for, your goal, and the tone you want to hit.' },
-            { step: '02', title: 'We build your brief', desc: 'Target subreddits, post drafts, reply templates, risk warnings, and a 7-day plan.' },
-            { step: '03', title: 'You execute manually', desc: 'Copy the drafts, post them yourself, engage in the comments. No automation.' },
-          ].map(s => (
-            <div key={s.step} className="step-card-new">
-              <div className="step-num-new">{s.step}</div>
-              <h3 style={{ fontSize: '1.15rem', margin: '16px 0 8px' }}>{s.title}</h3>
-              <p className="text-slate" style={{ fontSize: '.95rem' }}>{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
+                <div className="q-card feature-row-visual-left" style={{ background: '#ffffff', width: '100%' }}>
+                  <div style={{ borderBottom: '1px solid var(--border-subtle)', paddingBottom: '12px', marginBottom: '16px' }}>
+                    <span className="dashboard-label" style={{ fontFamily: 'ui-monospace, monospace' }}>Generated Draft Angle (r/SaaS)</span>
+                  </div>
+                  <p style={{ fontStyle: 'italic', fontWeight: 700, fontSize: '0.95rem', margin: '0 0 12px', color: 'var(--accent)', borderLeft: '2px solid var(--accent)', paddingLeft: '8px' }}>
+                    &ldquo;I spent 40 hours analyzing trials. Here is why users churn.&rdquo;
+                  </p>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
+                    Hey r/SaaS, founder of Churnfix here. We analyzed 500 trial funnels to find user blockages. Key reason: trial onboardings exceeding 4 steps drive a 58% drop-off.
+                  </p>
+                </div>
+              </div>
 
-      <div className="section-divider" style={{ margin: '96px 0' }} />
+              {/* Row 3: Reply commentary */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="feature-row">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }} className="feature-text-block">
+                  <span className="tag-badge">[ 03 // REPLY Blueprints ]</span>
+                  <h3 style={{ fontSize: '1.8rem', fontWeight: 700, margin: 0 }}>Keep conversations moving with reply templates.</h3>
+                  <p style={{ color: 'var(--fg-muted)', margin: 0 }}>
+                    The real conversion on Reddit happens inside the comment tree. We build situation-specific script blueprints to handle audits, code requests, and soft product CTAs.
+                  </p>
+                  <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--fg-muted)', fontSize: '0.95rem' }}>
+                    <li>20 situation reply comment variations.</li>
+                    <li>Scripts to safely present links when requested.</li>
+                  </ul>
+                </div>
 
-      {/* ── COMPARISON ── */}
-      <FadeIn>
-        <div className="section-header">
-          <span className="section-label">WHY IT WORKS</span>
-          <h2>Without a plan vs. with a brief.</h2>
-        </div>
-        <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-          <div className="comparison-card comparison-bad">
-            <h3 style={{ fontSize: '1.1rem', marginBottom: '20px' }}>Winging it on Reddit</h3>
-            <ul className="comparison-list">
-              <li>Post your link, hope someone clicks</li>
-              <li>Get removed by automod within 10 minutes</li>
-              <li>No idea which subreddits actually allow promo</li>
-              <li>Same generic pitch across 5 communities</li>
-              <li>Zero replies because you ghosted the comments</li>
-            </ul>
-          </div>
-          <div className="comparison-card comparison-good">
-            <h3 style={{ fontSize: '1.1rem', color: 'white', marginBottom: '20px' }}>Using a ThreadScout brief</h3>
-            <ul className="comparison-list" style={{ color: 'rgba(255,255,255,.7)' }}>
-              <li>Subreddits pre-vetted for your niche and risk level</li>
-              <li>Post drafts that sound like a founder, not an ad</li>
-              <li>Reply templates for praise, criticism, and pricing questions</li>
-              <li>Risk warnings so you don&rsquo;t break rules you didn&rsquo;t know about</li>
-              <li>A 7-day plan so you actually follow through</li>
-            </ul>
-          </div>
-        </div>
-      </FadeIn>
+                <div className="reddit-mockup" style={{ background: '#ffffff', width: '100%' }}>
+                  <div className="reddit-votes">
+                    <ArrowUp size={16} className="reddit-vote-btn upvoted" />
+                    <span>42</span>
+                  </div>
+                  <div className="reddit-content">
+                    <div className="reddit-meta">
+                      <span className="reddit-meta-sub" style={{ fontWeight: 700 }}>r/SideProject</span>
+                      <span>• Posted by u/saasfounder</span>
+                    </div>
+                    <span className="reddit-title" style={{ fontSize: '0.95rem', fontWeight: 600 }}>Drop your startup onboarding, I will audit it for free</span>
+                    <div className="reddit-comment-tree">
+                      <div>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 700 }}>u/designguy</span>
+                        <p style={{ fontSize: '0.82rem', margin: '2px 0 0' }}>Check mine: glyph.app - it auto-creates guidelines.</p>
+                      </div>
+                      <div className="reddit-comment-tree" style={{ borderLeftColor: 'var(--accent)' }}>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)' }}>u/saasfounder (OP)</span>
+                        <p style={{ fontSize: '0.82rem', color: 'var(--fg-muted)', margin: '2px 0 0' }}>Logo layout is clean. Reduce font weights. Early access code is GLYPH50.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-      <div className="section-divider" style={{ margin: '96px 0' }} />
+              {/* Row 4: Safety Warning */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }} className="feature-row reverse">
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }} className="feature-text-block">
+                  <span className="tag-badge">[ 04 // COMPLIANCE ]</span>
+                  <h3 style={{ fontSize: '1.8rem', fontWeight: 700, margin: 0 }}>Avoid domain blacklisting and account suspensions.</h3>
+                  <p style={{ color: 'var(--fg-muted)', margin: 0 }}>
+                    We analyze implicit rules and moderator guidelines for every channel. We warn you about forbidden link-dumping tactics so you protect your domain's credibility.
+                  </p>
+                  <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--fg-muted)', fontSize: '0.95rem' }}>
+                    <li>Targeted channel rules and anti-spam protocols.</li>
+                    <li>藍-flag mitigation guidelines to avoid reports.</li>
+                  </ul>
+                </div>
 
-      {/* ── WHAT YOU GET — Features ── */}
-      <FadeIn>
-        <div className="section-header"><h2>Everything in your campaign.</h2></div>
-        <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-          {[
-            { icon: Map, title: 'Subreddit Map', desc: 'Best subreddits for your niche, sorted by fit and promotional risk.' },
-            { icon: FileText, title: 'Post Drafts', desc: '3 full Reddit posts, written for each subreddit\'s tone and rules.' },
-            { icon: MessageCircle, title: 'Reply Templates', desc: '20 reply templates grouped by situation: praise, criticism, pricing questions.' },
-            { icon: ShieldAlert, title: 'Risk Detection', desc: 'Subreddit-specific warnings so you don\'t accidentally break a rule.' },
-            { icon: Calendar, title: '7-Day Plan', desc: 'Day-by-day action plan: what to post, where, and when.' },
-            { icon: Zap, title: 'Soft CTAs', desc: '5 natural ways to mention your product without sounding like an ad.' },
-          ].map(f => (
-            <StaggerItem key={f.title} className="feature-card-new">
-              <div style={{ width: 40, height: 40, borderRadius: 12, background: 'var(--orange-soft)', color: 'var(--orange-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}><f.icon size={20} /></div>
-              <h4 style={{ fontSize: '1.05rem', marginBottom: '8px' }}>{f.title}</h4>
-              <p className="text-slate" style={{ fontSize: '.9rem' }}>{f.desc}</p>
-            </StaggerItem>
-          ))}
-        </div>
-      </FadeIn>
+                <div className="feature-row-visual-left" style={{ border: '1px solid #fef3c7', background: '#fffbeb', padding: '24px', borderRadius: '6px', display: 'flex', gap: '16px', alignItems: 'flex-start', color: '#b45309', width: '100%' }}>
+                  <AlertTriangle size={20} style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <div>
+                    <strong style={{ fontSize: '0.9rem', display: 'block', marginBottom: '4px' }}>Implicit Subreddit Rules Alert</strong>
+                    <p style={{ fontSize: '0.85rem', color: '#b45309', margin: 0, lineHeight: 1.4 }}>
+                      Do not include a landing page link in the main post body. Only provide your link to users who explicitly request it in the comments.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-      <div className="section-divider" style={{ margin: '96px 0' }} />
-
-      {/* ── EXAMPLE OUTPUT ── */}
-      <FadeIn id="examples">
-        <div className="section-header"><h2>See a real campaign output.</h2><p>Example product: Glyph — brand identity generator for startups.</p></div>
-        <div className="report-card" style={{ maxWidth: '900px', margin: '0 auto', padding: '40px', borderTop: '4px solid var(--orange-primary)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
-            <div className="metric-box"><div className="metric-label">Product</div><div className="metric-val" style={{ fontSize: '1.1rem' }}>Glyph</div></div>
-            <div className="metric-box"><div className="metric-label">Goal</div><div className="metric-val" style={{ fontSize: '1.1rem' }}>Feedback + users</div></div>
-            <div className="metric-box"><div className="metric-label">Risk</div><div className="metric-val text-warning" style={{ fontSize: '1.1rem' }}>Medium</div></div>
-            <div className="metric-box"><div className="metric-label">Type</div><div className="metric-val text-orange" style={{ fontSize: '1.1rem' }}>Free Audit</div></div>
-          </div>
-          <div style={{ marginBottom: '28px' }}>
-            <h4 style={{ color: 'var(--orange-primary)', textTransform: 'uppercase', fontSize: '.8rem', letterSpacing: '.06em', marginBottom: '12px' }}>Best First Post</h4>
-            <div style={{ padding: '20px', background: 'var(--bg-warm)', border: '1px solid var(--orange-soft)', borderRadius: 12, fontSize: '1.1rem', fontStyle: 'italic', fontWeight: 600 }}>
-              &ldquo;Drop your startup. I&rsquo;ll give you a quick brand direction.&rdquo;
             </div>
           </div>
-          <div style={{ marginBottom: '28px' }}>
-            <h4 style={{ color: 'var(--orange-primary)', textTransform: 'uppercase', fontSize: '.8rem', letterSpacing: '.06em', marginBottom: '12px' }}>Recommended Subreddits</h4>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              {['r/SideProject', 'r/SaaS', 'r/micro_saas', 'r/startups'].map(s => (
-                <span key={s} style={{ padding: '8px 16px', borderRadius: 99, background: 'var(--bg-surface)', border: '1px solid var(--line)', fontWeight: 700, fontSize: '.9rem' }}>{s}</span>
-              ))}
+        </section>
+
+        {/* ── THE PROCESS SECTION (Diagnose. Treat. Repeat. Horizontal Row) ── */}
+        <section className="section-wrapper" style={{ background: 'var(--bg-subtle)', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)', padding: '100px 0' }}>
+          <div className="container">
+            <div className="section-header" style={{ alignItems: 'center', textAlign: 'center', margin: '0 auto 80px' }}>
+              <span className="tag-badge">[ 02 // PROCESS ]</span>
+              <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', textAlign: 'center' }}>Diagnose. Treat. Repeat.</h2>
+              <p className="section-paragraph" style={{ textAlign: 'center' }}>
+                A structured, connected strategy for organic growth, designed for manual execution.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }} className="grid-4">
+              
+              {/* Card 1 */}
+              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 01 // DISCOVER ]</span>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Scout subreddits</h4>
+                <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
+                  Locate where your target customers discuss issues.
+                </p>
+              </div>
+
+              {/* Card 2 */}
+              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 02 // ANALYZE ]</span>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Assess risk</h4>
+                <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
+                  Calculate posting risk scores based on mod patterns.
+                </p>
+              </div>
+
+              {/* Card 3 */}
+              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 03 // GENERATE ]</span>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Script materials</h4>
+                <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
+                  Create native-sounding posts and situation replies.
+                </p>
+              </div>
+
+              {/* Card 4 */}
+              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 04 // EXECUTE ]</span>
+                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Post manually</h4>
+                <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
+                  Publish briefs manually to build genuine authority.
+                </p>
+              </div>
+
             </div>
           </div>
-          <div className="report-mistake">
-            <AlertTriangle size={16} style={{ display: 'inline', marginRight: 8, verticalAlign: 'text-bottom' }} />
-            <strong>Mistake to avoid:</strong> Do not drop the product link in the first sentence. Earn the click through the comments.
+        </section>
+
+        {/* ── PRICING SECTION (Simple pricing. Every plan. Dark highlight) ── */}
+        <section className="section-wrapper" id="pricing">
+          <div className="container">
+            <div className="section-header" style={{ alignItems: 'center', textAlign: 'center', margin: '0 auto 80px' }}>
+              <span className="tag-badge">[ 03 // THE OFFER ]</span>
+              <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', textAlign: 'center' }}>Simple pricing. The full strategy.</h2>
+              <p className="section-paragraph" style={{ textAlign: 'center' }}>
+                Get your campaigns in minutes. Start with a free preview brief or unlock full campaign lists.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', alignItems: 'stretch' }} className="pricing-grid">
+              
+              {/* Card 1: Starter */}
+              <div style={{ background: '#ffffff', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: '0.75rem', fontFamily: 'ui-monospace, monospace', color: 'var(--fg-subtle)', fontWeight: 600 }}>STARTER</span>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '8px 0' }}>Free Preview</h3>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--fg)', margin: '16px 0 8px' }}>$0</div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--fg-muted)', marginBottom: '24px' }}>Test our matching rules engine with a single preview campaign matching your category.</p>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }} className="price-features">
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--fg-muted)' }}><CheckCircle size={14} style={{ color: 'var(--fg-subtle)' }} /> 1 campaign brief</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--fg-muted)' }}><CheckCircle size={14} style={{ color: 'var(--fg-subtle)' }} /> 3 target subreddits</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--fg-muted)' }}><CheckCircle size={14} style={{ color: 'var(--fg-subtle)' }} /> Limited drafts access</li>
+                </ul>
+                <Link href="/generate" className="btn btn-secondary" style={{ width: '100%', textAlign: 'center', background: 'var(--bg-subtle)' }}>
+                  Start Free
+                </Link>
+              </div>
+
+              {/* Card 2: Recommended (Dark highlight!) */}
+              <div style={{ background: '#121212', color: '#ffffff', border: '2px solid var(--accent)', borderRadius: 'var(--radius-md)', padding: '40px 32px', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                <span style={{ position: 'absolute', top: '16px', right: '16px', fontSize: '0.65rem', fontFamily: 'ui-monospace, monospace', background: 'var(--accent)', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>RECOMMENDED</span>
+                <span style={{ fontSize: '0.75rem', fontFamily: 'ui-monospace, monospace', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>LAUNCH PACK</span>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '8px 0', color: '#ffffff' }}>Full Strategy</h3>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#ffffff', margin: '16px 0 8px' }}>$19</div>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', marginBottom: '24px' }}>Our full 7-day manual growth blueprint with vetted subreddits, drafts, and comment copy.</p>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }} className="price-features">
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.8)' }}><CheckCircle size={14} style={{ color: 'var(--accent)' }} /> 6+ pre-vetted subreddits</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.8)' }}><CheckCircle size={14} style={{ color: 'var(--accent)' }} /> 3 post drafts & 20 scripts</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.8)' }}><CheckCircle size={14} style={{ color: 'var(--accent)' }} /> 7-day checklist schedule</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.8)' }}><CheckCircle size={14} style={{ color: 'var(--accent)' }} /> Custom safety warning rules</li>
+                </ul>
+                <Link href="/checkout?plan=launch-pack" className="btn btn-primary" style={{ width: '100%', textAlign: 'center', background: 'var(--accent)', borderColor: 'var(--accent)', color: '#ffffff' }}>
+                  Get Launch Pack
+                </Link>
+                <div style={{ marginTop: '16px', fontSize: '0.72rem', fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontWeight: 600, textAlign: 'center' }}>
+                  ⚠️ PRICE RISES TO $29 ONCE AI GOES LIVE
+                </div>
+              </div>
+
+              {/* Card 3: Expert Review */}
+              <div style={{ background: '#ffffff', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: '0.75rem', fontFamily: 'ui-monospace, monospace', color: 'var(--fg-subtle)', fontWeight: 600 }}>FOUNDER</span>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '8px 0' }}>Expert Review</h3>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--fg)', margin: '16px 0 8px' }}>$49</div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--fg-muted)', marginBottom: '24px' }}>Get everything in the Launch Pack plus a manual campaign audit and custom copy rewrite by our founder.</p>
+                
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }} className="price-features">
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--fg-muted)' }}><CheckCircle size={14} style={{ color: 'var(--fg-subtle)' }} /> Everything in Launch Pack</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--fg-muted)' }}><CheckCircle size={14} style={{ color: 'var(--fg-subtle)' }} /> Custom manual copy rewrite</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: 'var(--fg-muted)' }}><CheckCircle size={14} style={{ color: 'var(--fg-subtle)' }} /> Strategy audit commentary</li>
+                </ul>
+                <Link href="/checkout?plan=founder-review" className="btn btn-secondary" style={{ width: '100%', textAlign: 'center', background: 'var(--bg-subtle)' }}>
+                  Get Custom Review
+                </Link>
+              </div>
+
+            </div>
           </div>
-          <div style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid var(--border-soft)', display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
-            <Link href="/generate" className="btn btn-primary">Generate your campaign <ArrowRight size={16} /></Link>
+        </section>
+
+        {/* ── FAQ ACCORDION SECTION ── */}
+        <section className="section-wrapper" style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '100px', paddingBottom: '120px' }}>
+          <div className="container" style={{ maxWidth: '900px' }}>
+            <div className="section-header" style={{ alignItems: 'center', textAlign: 'center', margin: '0 auto 64px' }}>
+              <span className="tag-badge">[ 04 // QUESTIONS ]</span>
+              <h2 style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', textAlign: 'center' }}>Common questions.</h2>
+            </div>
+
+            <div className="faq-grid" style={{ marginBottom: '60px' }}>
+              <FaqItem
+                question="Does ThreadScout post to Reddit for me?"
+                answer="No. We build copy scripts and subreddit schedules. You submit manually from your own account. This preserves account credibility and satisfies Reddit's anti-bot guidelines."
+              />
+              <FaqItem
+                question="Is this strategy safe for my domain name?"
+                answer="Yes. By avoiding mass DMs, automated auto-posting scripts, and raw link dumping in titles, your domain name avoids getting blacklisted by Reddit system filters."
+              />
+              <FaqItem
+                question="Who is this designed for?"
+                answer="Solo builders, SaaS founders, indie hackers, and creators looking to find early beta users, get feedback, or validate their products without paying for expensive ads."
+              />
+              <FaqItem
+                question="What is included in the campaign briefs?"
+                answer="A matching subreddit map with fit risk scores, 3 post draft scripts, 20 situation reply comment templates, account safety notes, and a 7-day checklist schedule."
+              />
+            </div>
+
+            {/* Bottom Support CTA */}
+            <div style={{ background: '#ffffff', border: '1px solid var(--border-subtle)', padding: '32px', borderRadius: 'var(--radius-md)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+              <div>
+                <strong style={{ fontSize: '1.05rem', display: 'block' }}>Have other questions?</strong>
+                <span style={{ fontSize: '0.88rem', color: 'var(--fg-muted)' }}>We are here to help. Contact us anytime.</span>
+              </div>
+              <Link href="/contact" className="btn btn-primary" style={{ background: 'var(--accent)', borderColor: 'var(--accent)' }}>Contact Support</Link>
+            </div>
           </div>
-        </div>
-      </FadeIn>
+        </section>
 
-      <div className="section-divider" style={{ margin: '96px 0' }} />
-
-      {/* ── PRICING ── */}
-      <FadeIn id="pricing">
-        <div className="section-header"><h2>Simple pricing.</h2></div>
-        <div className="pricing-grid">
-          <div className="price-card" style={{ border: '1px solid var(--border-soft)' }}>
-            <div className="price-name">Free Preview</div>
-            <div className="price-val">$0</div>
-            <p className="text-slate" style={{ marginBottom: '24px' }}>Test the strategy engine.</p>
-            <ul className="price-features">
-              <li><CheckCircle size={18} /> 1 campaign</li>
-              <li><CheckCircle size={18} /> 3 subreddit targets</li>
-              <li><CheckCircle size={18} /> Limited drafts</li>
-            </ul>
-            <Link href="/generate" className="btn btn-secondary btn-lg" style={{ marginTop: 'auto' }}>Get free preview</Link>
+        {/* ── FULL-BLEED CTA SECTION ── */}
+        <section style={{ background: '#121212', color: '#ffffff', padding: '120px 0', borderTop: '1px solid var(--border)', textAlign: 'center' }}>
+          <div className="container">
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '24px' }}>
+              <h2 style={{ color: '#ffffff', fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', textAlign: 'center', margin: 0, lineHeight: 1.1 }}>
+                Be in the answer,<br />
+                not just on the page.
+              </h2>
+              <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '1.2rem', maxWidth: '500px', margin: 0 }}>
+                Build your first value-first campaign brief in under 60 seconds.
+              </p>
+              <Link href="/generate" className="btn btn-primary btn-lg" style={{ background: '#ffffff', color: '#121212', border: '1px solid #ffffff', marginTop: '16px' }}>
+                Build your campaign <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
-          <div className="price-card featured" style={{ transform: 'scale(1.04)', zIndex: 10 }}>
-            <div className="price-badge">Most Popular</div>
-            <div className="price-name">Launch Pack</div>
-            <div className="price-val">$19</div>
-            <p style={{ color: 'rgba(255,250,241,.7)', marginBottom: '24px' }}>Full 7-day Reddit strategy.</p>
-            <ul className="price-features">
-              <li><CheckCircle size={18} style={{ color: 'var(--orange-accent)' }} /> Full 7-day campaign</li>
-              <li><CheckCircle size={18} style={{ color: 'var(--orange-accent)' }} /> 6+ subreddit targets</li>
-              <li><CheckCircle size={18} style={{ color: 'var(--orange-accent)' }} /> 3 post drafts</li>
-              <li><CheckCircle size={18} style={{ color: 'var(--orange-accent)' }} /> 20 reply templates</li>
-              <li><CheckCircle size={18} style={{ color: 'var(--orange-accent)' }} /> Risk detection</li>
-            </ul>
-            <Link href="/checkout?plan=launch-pack" className="btn btn-primary btn-lg" style={{ marginTop: 'auto', background: 'white', color: 'var(--ink)' }}>Get Launch Pack</Link>
-          </div>
-          <div className="price-card" style={{ border: '1px solid var(--border-soft)' }}>
-            <div className="price-badge price-badge-urgent">Limited</div>
-            <div className="price-name">Founder Review</div>
-            <div className="price-val">$49</div>
-            <p className="text-slate" style={{ marginBottom: '24px' }}>Manual human review.</p>
-            <ul className="price-features">
-              <li><Star size={18} /> Everything in Launch Pack</li>
-              <li><Star size={18} /> Manual strategy review</li>
-              <li><Star size={18} /> Custom post edits</li>
-            </ul>
-            <Link href="/checkout?plan=founder-review" className="btn btn-secondary btn-lg" style={{ marginTop: 'auto' }}>Get reviewed</Link>
-          </div>
-        </div>
-      </FadeIn>
-
-      <div className="section-divider" style={{ margin: '96px 0' }} />
-
-      {/* ── FAQ ── */}
-      <FadeIn>
-        <div className="section-header"><h2>FAQ</h2></div>
-        <div className="faq-section">
-          <FaqItem question="Does ThreadScout post to Reddit for me?" answer="No. We help you plan manual, value-first campaigns. No auto-posting, no mass DMs. We give you the strategy, you do the posting." />
-          <FaqItem question="Is this safe for Reddit?" answer="Yes. The entire approach is designed around subreddit rules and value-first participation. You still need to follow each community's rules, but our risk notes flag problems before you post." />
-          <FaqItem question="Who is this for?" answer="SaaS founders, indie hackers, solo builders, and startup teams who want Reddit traffic without spammy tactics." />
-          <FaqItem question="What do I get?" answer="Subreddit targets, post drafts, reply templates, risk notes, a 7-day plan, and a campaign tracker. All based on your specific product." />
-        </div>
-      </FadeIn>
-
-      {/* ── FINAL CTA ── */}
-      <FadeIn className="final-cta" style={{ margin: '96px auto 48px' }}>
-        <h2 style={{ fontSize: '2.5rem' }}>Stop overthinking Reddit.</h2>
-        <p>Get your campaign brief in 60 seconds.</p>
-        <Link href="/generate" className="btn btn-primary btn-lg" style={{ marginTop: '24px' }}>Build my campaign <ArrowRight size={20} /></Link>
-      </FadeIn>
-
+        </section>
+        
+      </div>
     </div>
   );
 }
