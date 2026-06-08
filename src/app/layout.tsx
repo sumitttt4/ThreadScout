@@ -49,7 +49,7 @@ const jsonLd = {
   'description': 'Value-first Reddit campaign planning tool for SaaS founders to locate target subreddits, generate native post drafts, and get reply comment templates.',
   'offers': {
     '@type': 'Offer',
-    'price': '19.00',
+    'price': '29.00',
     'priceCurrency': 'USD',
   },
 };

@@ -8,7 +8,7 @@ import { FaqItem } from '@/components/FaqItem';
 
 export default function Home() {
   return (
-    <div style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh' }}>
+    <div style={{ position: 'relative', overflow: 'hidden', minHeight: '100vh', backgroundColor: '#F4F0E8' }}>
       
       {/* ── VERTICAL GRIDLINES (Visual Rhythm from Screenshot) ── */}
       <div className="grid-lines-container no-print">
@@ -105,11 +105,11 @@ export default function Home() {
         {/* ── TARGET CHANNELS STRIP (Niche Bar mimicking Partner logos) ── */}
         <section style={{ borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)', padding: '24px 0' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', textAlign: 'center', fontWeight: 700, fontSize: '0.9rem', color: 'var(--fg-muted)' }} className="grid-4">
-              <div>🎯 DEVELOPER TOOLS</div>
-              <div>⚡ AI & MACHINE LEARNING</div>
-              <div>💻 SAAS PLATFORMS</div>
-              <div>🎨 INDIE DESIGN CREATORS</div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', textAlign: 'center', fontWeight: 700, fontSize: '0.85rem', color: 'var(--fg-muted)', fontFamily: 'ui-monospace, monospace', letterSpacing: '0.05em' }} className="grid-4">
+              <div>// DEVELOPER TOOLS</div>
+              <div>// AI & MACHINE LEARNING</div>
+              <div>// SAAS PLATFORMS</div>
+              <div>// INDIE DESIGN CREATORS</div>
             </div>
           </div>
         </section>
@@ -272,7 +272,7 @@ export default function Home() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }} className="grid-4">
               
               {/* Card 1 */}
-              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ background: '#FDF1EC', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 01 // DISCOVER ]</span>
                 <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Scout subreddits</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
@@ -281,7 +281,7 @@ export default function Home() {
               </div>
 
               {/* Card 2 */}
-              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ background: '#EDF7F2', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 02 // ANALYZE ]</span>
                 <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Assess risk</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
@@ -290,7 +290,7 @@ export default function Home() {
               </div>
 
               {/* Card 3 */}
-              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ background: '#FCF8E8', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 03 // GENERATE ]</span>
                 <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Script materials</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
@@ -299,7 +299,7 @@ export default function Home() {
               </div>
 
               {/* Card 4 */}
-              <div style={{ background: '#ffffff', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ background: '#EFF5F9', padding: '32px 24px', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <span style={{ fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontSize: '0.78rem', fontWeight: 700 }}>[ 04 // EXECUTE ]</span>
                 <h4 style={{ fontSize: '1.1rem', fontWeight: 700, margin: 0 }}>Post manually</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--fg-muted)', margin: 0, lineHeight: 1.5 }}>
@@ -328,7 +328,7 @@ export default function Home() {
               <div style={{ background: '#ffffff', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
                 <span style={{ fontSize: '0.75rem', fontFamily: 'ui-monospace, monospace', color: 'var(--fg-subtle)', fontWeight: 600 }}>STARTER</span>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '8px 0' }}>Free Preview</h3>
-                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--fg)', margin: '16px 0 8px' }}>$0</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--fg)', margin: '16px 0 8px' }}>$0 <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--fg-muted)' }}>/ month</span></div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--fg-muted)', marginBottom: '24px' }}>Test our matching rules engine with a single preview campaign matching your category.</p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }} className="price-features">
@@ -346,7 +346,7 @@ export default function Home() {
                 <span style={{ position: 'absolute', top: '16px', right: '16px', fontSize: '0.65rem', fontFamily: 'ui-monospace, monospace', background: 'var(--accent)', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>RECOMMENDED</span>
                 <span style={{ fontSize: '0.75rem', fontFamily: 'ui-monospace, monospace', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>LAUNCH PACK</span>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '8px 0', color: '#ffffff' }}>Full Strategy</h3>
-                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#ffffff', margin: '16px 0 8px' }}>$19</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#ffffff', margin: '16px 0 8px' }}>$29 <span style={{ fontSize: '1rem', fontWeight: 500, color: 'rgba(255,255,255,0.6)' }}>/ month</span></div>
                 <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', marginBottom: '24px' }}>Our full 7-day manual growth blueprint with vetted subreddits, drafts, and comment copy.</p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }} className="price-features">
@@ -359,7 +359,7 @@ export default function Home() {
                   Get Launch Pack
                 </Link>
                 <div style={{ marginTop: '16px', fontSize: '0.72rem', fontFamily: 'ui-monospace, monospace', color: 'var(--accent)', fontWeight: 600, textAlign: 'center' }}>
-                  ⚠️ PRICE RISES TO $29 ONCE AI GOES LIVE
+                  [ BILLED MONTHLY // CANCEL ANYTIME ]
                 </div>
               </div>
 
@@ -367,7 +367,7 @@ export default function Home() {
               <div style={{ background: '#ffffff', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '40px 32px', display: 'flex', flexDirection: 'column' }}>
                 <span style={{ fontSize: '0.75rem', fontFamily: 'ui-monospace, monospace', color: 'var(--fg-subtle)', fontWeight: 600 }}>FOUNDER</span>
                 <h3 style={{ fontSize: '1.3rem', fontWeight: 700, margin: '8px 0' }}>Expert Review</h3>
-                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--fg)', margin: '16px 0 8px' }}>$49</div>
+                <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--fg)', margin: '16px 0 8px' }}>$49 <span style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--fg-muted)' }}>/ month</span></div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--fg-muted)', marginBottom: '24px' }}>Get everything in the Launch Pack plus a manual campaign audit and custom copy rewrite by our founder.</p>
                 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px', display: 'flex', flexDirection: 'column', gap: '12px', flexGrow: 1 }} className="price-features">

@@ -220,7 +220,7 @@ function ResultContent() {
             <span className="price-badge" style={{ color: 'white' }}>Upgrade Brief</span>
             <h3 style={{ marginBottom: '12px' }}>Unlock full Launch Pack</h3>
             <p style={{ marginBottom: '24px', fontSize: '0.95rem', color: 'rgba(255,255,255,0.7)' }}>Get the full 7-day schedule, 6+ subreddits, and all drafts.</p>
-            <Link href="/checkout?plan=launch-pack" className="btn btn-primary" style={{ width: '100%' }}>Get Launch Pack — $19</Link>
+            <Link href="/checkout?plan=launch-pack" className="btn btn-primary" style={{ width: '100%' }}>Get Launch Pack — $29</Link>
           </div>
           <div className="pricing-card" style={{ textAlign: 'center', justifyContent: 'center' }}>
             <span className="price-badge">Manual Review</span>

@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 const kindLabel: Record<string, string> = {
-  money: '💰 Strategy',
-  subreddit: '📍 Subreddits',
-  usecase: '🎯 Use Case',
-  compare: '⚔️ Comparison',
-  story: '📖 Story',
+  money: 'Strategy',
+  subreddit: 'Subreddits',
+  usecase: 'Use Case',
+  compare: 'Comparison',
+  story: 'Story',
 };
 
 export default function ExamplesPage() {
